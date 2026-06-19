@@ -1,0 +1,92 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+    function isAdmin() {
+      return signedIn() && request.auth.token.email == "elkit.com@gmail.com";
+    }
+    function isOwnerUid(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+    function activity(activityId) {
+      return get(/databases/$(database)/documents/activities/$(activityId));
+    }
+    function question(questionId) {
+      return get(/databases/$(database)/documents/questions/$(questionId));
+    }
+
+    match /users/{uid} {
+      allow read, write: if isAdmin() || isOwnerUid(uid);
+    }
+
+    match /sessions/{sessionId} {
+      allow read: if resource.data.published == true || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /questions/{questionId} {
+      allow read: if signedIn();
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /activities/{activityId} {
+      allow read: if signedIn();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Las respuestas correctas nunca se envían al cliente del estudiante.
+    match /answerKeys/{questionId} {
+      allow read, create, update, delete: if isAdmin();
+    }
+
+    match /liveResponses/{responseId} {
+      allow read: if isAdmin() || (signedIn() && resource.data.responderUid == request.auth.uid);
+      allow create: if signedIn()
+        && request.resource.data.responderUid == request.auth.uid
+        && request.resource.data.keys().hasOnly([
+          'activityId', 'questionId', 'questionNumber', 'responderUid',
+          'responderName', 'responderEmail', 'answer', 'submittedAt'
+        ])
+        && activity(request.resource.data.activityId).data.status == 'open'
+        && question(request.resource.data.questionId).data.activityId == request.resource.data.activityId
+        && (
+          activity(request.resource.data.activityId).data.pace == 'self'
+          || activity(request.resource.data.activityId).data.currentQuestionNumber == request.resource.data.questionNumber
+        );
+      // Una respuesta enviada queda bloqueada. Solo el docente puede corregirla o eliminarla.
+      allow update, delete: if isAdmin();
+    }
+
+    match /groups/{groupId} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isAdmin() || (signedIn() && resource.data.createdBy == request.auth.uid);
+      allow delete: if isAdmin();
+    }
+
+    match /submissions/{submissionId} {
+      allow read: if isAdmin() || resource.data.ownerUid == request.auth.uid;
+      allow create: if signedIn()
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.status in ['draft', 'submitted']
+        && request.resource.data.keys().hasOnly([
+          'sessionId', 'groupName', 'leaderName', 'leaderEmail', 'ownerUid',
+          'ownerEmail', 'participants', 'answers', 'status', 'createdAt', 'updatedAt'
+        ]);
+      allow update: if isAdmin() || (
+        signedIn()
+        && resource.data.ownerUid == request.auth.uid
+        && resource.data.status != 'closed'
+        && request.resource.data.ownerUid == resource.data.ownerUid
+        && request.resource.data.status in ['draft', 'submitted']
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'groupName', 'leaderName', 'leaderEmail', 'participants',
+          'answers', 'status', 'updatedAt'
+        ])
+      );
+      allow delete: if isAdmin();
+    }
+  }
+}

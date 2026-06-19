@@ -1,0 +1,6 @@
+sesion,numero,tipo,pregunta,descripcion,obligatorio,puntaje,criterio
+S1,1,parrafo,¿Qué se entiende por crisis del software?,Explique con sus palabras y relacione retrasos sobrecostos calidad y mantenimiento,Sí,1,Comprensión
+S1,2,parrafo,¿Por qué programar no es suficiente para construir buen software?,Conecte su respuesta con requisitos diseño pruebas y mantenimiento,Sí,1,Análisis
+S1,3,parrafo,Describa un caso de software que empezó simple y terminó en caos,Puede ser real ficticio o cercano,Sí,1,Aplicación
+S1,4,parrafo,¿Qué decisiones tempranas habrían evitado ese caos?,Proponga mínimo tres acciones de ingeniería de software,Sí,1,Propuesta
+S1,5,parrafo,Primer avance del proyecto final: problema usuarios afectados y contexto,Describa el problema que su grupo trabajará durante el curso,Sí,2,Proyecto integrador

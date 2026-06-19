@@ -1,0 +1,4 @@
+numero,tipo,pregunta,descripcion,opciones,respuesta_correcta,retroalimentacion,puntaje,obligatorio
+1,seleccion,¿Cuál práctica ayuda a comprender una necesidad antes de programar?,Seleccione una opción,Levantar requisitos|Escribir código inmediatamente|Omitir al usuario,Levantar requisitos,Los requisitos permiten acordar el problema y el alcance antes de construir.,1,Sí
+2,verdadero_falso,Las pruebas solo deben realizarse al final del proyecto.,Responda verdadero o falso,,Falso,Probar durante el desarrollo permite detectar problemas más temprano.,1,Sí
+3,short,Mencione un riesgo de trabajar sin requisitos claros.,Respuesta breve,,,Se revisa manualmente durante la conversación de clase.,1,Sí
