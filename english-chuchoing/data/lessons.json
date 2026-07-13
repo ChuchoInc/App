@@ -1,0 +1,148 @@
+{
+  "lecciones": [
+    {
+      "id": "chucho-the-dog",
+      "titulo": "Chucho the Dog",
+      "nivel": "Básico",
+      "texto": "Chucho is a small brown dog. He lives in a quiet neighborhood with his owner, Marta. Every morning, Chucho wakes up early and waits by the door. He loves to walk in the park and chase the birds. When he is hungry, he barks near his bowl. At night, Chucho sleeps on a soft blanket next to Marta's bed. He is a very happy dog.",
+      "palabras": [
+        { "en": "brown", "es": "café / marrón" },
+        { "en": "quiet", "es": "tranquilo" },
+        { "en": "neighborhood", "es": "vecindario" },
+        { "en": "owner", "es": "dueña / dueño" },
+        { "en": "waits", "es": "espera" },
+        { "en": "chase", "es": "perseguir" },
+        { "en": "hungry", "es": "hambriento" },
+        { "en": "barks", "es": "ladra" },
+        { "en": "bowl", "es": "plato / tazón" },
+        { "en": "blanket", "es": "cobija / manta" }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What color is Chucho?",
+          "opciones": ["Black", "Brown", "White"],
+          "correcta": 1
+        },
+        {
+          "pregunta": "What does Chucho do every morning?",
+          "opciones": [
+            "He sleeps all day",
+            "He eats at the park",
+            "He wakes up early and waits by the door"
+          ],
+          "correcta": 2
+        },
+        {
+          "pregunta": "What does Chucho do when he is hungry?",
+          "opciones": [
+            "He barks near his bowl",
+            "He chases the birds",
+            "He hides under the bed"
+          ],
+          "correcta": 0
+        },
+        {
+          "pregunta": "Where does Chucho sleep at night?",
+          "opciones": [
+            "In the park",
+            "By the door",
+            "On a soft blanket next to Marta's bed"
+          ],
+          "correcta": 2
+        }
+      ]
+    },
+    {
+      "id": "a-day-at-the-market",
+      "titulo": "A Day at the Market",
+      "nivel": "Básico",
+      "texto": "On Saturdays, Rosa goes to the market with her grandmother. The market is full of colors and smells. They buy fresh tomatoes, ripe mangoes, and warm bread. Rosa's favorite stand sells cheese from a small farm. The seller always gives her a free sample. Before going home, they drink orange juice and share a sweet pastry. Rosa thinks Saturdays are the best day of the week.",
+      "palabras": [
+        { "en": "market", "es": "mercado" },
+        { "en": "grandmother", "es": "abuela" },
+        { "en": "smells", "es": "olores" },
+        { "en": "fresh", "es": "frescos" },
+        { "en": "ripe", "es": "maduros" },
+        { "en": "warm", "es": "caliente / tibio" },
+        { "en": "stand", "es": "puesto" },
+        { "en": "seller", "es": "vendedor" },
+        { "en": "sample", "es": "muestra" },
+        { "en": "pastry", "es": "pan dulce / pastelito" }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "When does Rosa go to the market?",
+          "opciones": ["On Mondays", "On Saturdays", "Every day"],
+          "correcta": 1
+        },
+        {
+          "pregunta": "Who goes to the market with Rosa?",
+          "opciones": ["Her grandmother", "Her dog", "Her teacher"],
+          "correcta": 0
+        },
+        {
+          "pregunta": "What does the seller give Rosa?",
+          "opciones": [
+            "A ripe mango",
+            "Orange juice",
+            "A free sample of cheese"
+          ],
+          "correcta": 2
+        },
+        {
+          "pregunta": "What do they do before going home?",
+          "opciones": [
+            "They drink orange juice and share a pastry",
+            "They buy a small farm",
+            "They sell tomatoes"
+          ],
+          "correcta": 0
+        }
+      ]
+    },
+    {
+      "id": "the-football-match",
+      "titulo": "The Football Match",
+      "nivel": "Básico",
+      "texto": "Last Sunday, Diego played a football match with his team. The weather was sunny and the field was green and soft. In the first half, the other team scored a goal. Diego felt nervous, but his coach told him to stay calm. In the second half, Diego passed the ball to his friend Luis, and Luis scored! The match ended in a tie, one to one. Everyone celebrated with cold water and fruit.",
+      "palabras": [
+        { "en": "match", "es": "partido" },
+        { "en": "weather", "es": "clima" },
+        { "en": "field", "es": "cancha / campo" },
+        { "en": "scored", "es": "anotó" },
+        { "en": "goal", "es": "gol" },
+        { "en": "nervous", "es": "nervioso" },
+        { "en": "coach", "es": "entrenador" },
+        { "en": "calm", "es": "tranquilo / calmado" },
+        { "en": "tie", "es": "empate" },
+        { "en": "celebrated", "es": "celebraron" }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "When did Diego play the match?",
+          "opciones": ["Last Sunday", "Last Saturday", "Yesterday morning"],
+          "correcta": 0
+        },
+        {
+          "pregunta": "How did Diego feel in the first half?",
+          "opciones": ["Happy", "Nervous", "Tired"],
+          "correcta": 1
+        },
+        {
+          "pregunta": "Who scored the goal for Diego's team?",
+          "opciones": ["Diego", "The coach", "Luis"],
+          "correcta": 2
+        },
+        {
+          "pregunta": "How did the match end?",
+          "opciones": [
+            "Diego's team won two to one",
+            "In a tie, one to one",
+            "The other team won"
+          ],
+          "correcta": 1
+        }
+      ]
+    }
+  ]
+}

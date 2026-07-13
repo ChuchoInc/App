@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Aprende inglés leyendo textos cortos con palabras tocables y preguntas de comprensión." />
+  <meta name="theme-color" content="#1A3A52" />
+  <title>English ChuchoIng</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <button id="btn-back" class="btn-back" hidden aria-label="Volver">&#8592;</button>
+    <h1 class="app-title">English <span class="accent">ChuchoIng</span></h1>
+  </header>
+
+  <main id="app">
+
+    <!-- Vista: lista de lecciones -->
+    <section id="view-home" class="view">
+      <p class="home-intro">Elige una lección. Toca las palabras resaltadas mientras lees para ver su significado.</p>
+      <ul id="lesson-list" class="lesson-list" aria-label="Lecciones disponibles"></ul>
+    </section>
+
+    <!-- Vista: lectura -->
+    <section id="view-reading" class="view" hidden>
+      <h2 id="reading-title" class="lesson-title"></h2>
+      <p class="hint">&#128070; Toca las palabras resaltadas para ver su significado.</p>
+      <article id="reading-text" class="reading-text"></article>
+      <button id="btn-done" class="btn btn-primary">Ya leí &#10003;</button>
+    </section>
+
+    <!-- Vista: preguntas -->
+    <section id="view-quiz" class="view" hidden>
+      <h2 id="quiz-title" class="lesson-title"></h2>
+      <div id="quiz-progress" class="quiz-progress" aria-live="polite"></div>
+      <div id="quiz-questions"></div>
+      <div id="quiz-result" class="quiz-result" hidden>
+        <p id="quiz-score" class="quiz-score"></p>
+        <p id="quiz-message"></p>
+        <div class="quiz-actions">
+          <button id="btn-reread" class="btn btn-secondary">Releer el texto</button>
+          <button id="btn-home" class="btn btn-primary">Otra lección</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Tooltip de significado -->
+  <div id="tooltip" class="tooltip" hidden role="tooltip">
+    <span id="tooltip-en" class="tooltip-en"></span>
+    <span id="tooltip-es" class="tooltip-es"></span>
+  </div>
+
+  <div id="offline-badge" class="offline-badge" hidden>Sin conexión &mdash; modo offline</div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
